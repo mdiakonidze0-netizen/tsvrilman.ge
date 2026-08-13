@@ -1,1 +1,483 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>შეკვეთა — წვრილმანი</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .checkout-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .checkout-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .checkout-form label {
+            display: grid;
+            gap: 7px;
+            font-weight: bold;
+        }
+
+        .checkout-form input,
+        .checkout-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        .payment-option,
+        .delivery-option {
+            display: flex !important;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .payment-option input,
+        .delivery-option input {
+            width: auto;
+        }
+
+        .order-summary {
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .checkout-button {
+            width: 100%;
+            border: 0;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .checkout-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .order-summary {
+                position: static;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+        წვრილ<span>მანი</span>
+    </a>
+
+    <a href="cart.html">
+        ← კალათაში დაბრუნება
+    </a>
+
+</header>
+
+
+<main class="section">
+
+    <h1>
+        შეკვეთის გაფორმება
+    </h1>
+
+    <br>
+
+
+    <div class="checkout-layout">
+
+
+        <!-- მომხმარებლის ინფორმაცია -->
+
+        <section class="checkout-box">
+
+            <h2>
+                მომხმარებლის ინფორმაცია
+            </h2>
+
+            <br>
+
+
+            <form
+                id="checkoutForm"
+                class="checkout-form"
+            >
+
+
+                <label>
+
+                    სახელი
+
+                    <input
+                        type="text"
+                        id="firstName"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    გვარი
+
+                    <input
+                        type="text"
+                        id="lastName"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    ელფოსტა
+
+                    <input
+                        type="email"
+                        id="email"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    ტელეფონი
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    ქვეყანა
+
+                    <select
+                        id="country"
+                        required
+                    >
+
+                        <option value="">
+                            აირჩიე ქვეყანა
+                        </option>
+
+                        <option value="GE">
+                            🇬🇪 საქართველო
+                        </option>
+
+                        <option value="DE">
+                            🇩🇪 გერმანია
+                        </option>
+
+                        <option value="FR">
+                            🇫🇷 საფრანგეთი
+                        </option>
+
+                        <option value="IT">
+                            🇮🇹 იტალია
+                        </option>
+
+                        <option value="ES">
+                            🇪🇸 ესპანეთი
+                        </option>
+
+                        <option value="PL">
+                            🇵🇱 პოლონეთი
+                        </option>
+
+                        <option value="NL">
+                            🇳🇱 ნიდერლანდები
+                        </option>
+
+                        <option value="GR">
+                            🇬🇷 საბერძნეთი
+                        </option>
+
+                        <option value="AT">
+                            🇦🇹 ავსტრია
+                        </option>
+
+                        <option value="BE">
+                            🇧🇪 ბელგია
+                        </option>
+
+                        <option value="PT">
+                            🇵🇹 პორტუგალია
+                        </option>
+
+                        <option value="IE">
+                            🇮🇪 ირლანდია
+                        </option>
+
+                        <option value="SE">
+                            🇸🇪 შვედეთი
+                        </option>
+
+                        <option value="DK">
+                            🇩🇰 დანია
+                        </option>
+
+                        <option value="FI">
+                            🇫🇮 ფინეთი
+                        </option>
+
+                        <option value="CZ">
+                            🇨🇿 ჩეხეთი
+                        </option>
+
+                        <option value="RO">
+                            🇷🇴 რუმინეთი
+                        </option>
+
+                        <option value="BG">
+                            🇧🇬 ბულგარეთი
+                        </option>
+
+                        <option value="HR">
+                            🇭🇷 ხორვატია
+                        </option>
+
+                        <option value="HU">
+                            🇭🇺 უნგრეთი
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    ქალაქი
+
+                    <input
+                        type="text"
+                        id="city"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    მისამართი
+
+                    <input
+                        type="text"
+                        id="address"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    საფოსტო კოდი
+
+                    <input
+                        type="text"
+                        id="postalCode"
+                    >
+
+                </label>
+
+
+                <h2>
+                    მიწოდების მეთოდი
+                </h2>
+
+
+                <label class="delivery-option">
+
+                    <input
+                        type="radio"
+                        name="delivery"
+                        value="standard"
+                        checked
+                    >
+
+                    🚚 სტანდარტული მიწოდება
+
+                </label>
+
+
+                <label class="delivery-option">
+
+                    <input
+                        type="radio"
+                        name="delivery"
+                        value="express"
+                    >
+
+                    ⚡ სწრაფი მიწოდება
+
+                </label>
+
+
+                <h2>
+                    გადახდის მეთოდი
+                </h2>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="card"
+                        checked
+                    >
+
+                    💳 საბანკო ბარათი
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="cash"
+                    >
+
+                    💵 ადგილზე გადახდა
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="primary-button checkout-button"
+                >
+                    შეკვეთის დადასტურება
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- შეკვეთის შეჯამება -->
+
+        <aside class="checkout-box order-summary">
+
+            <h2>
+                შენი შეკვეთა
+            </h2>
+
+            <br>
+
+            <div id="checkoutItems">
+
+                <p>
+                    კალათა ცარიელია.
+                </p>
+
+            </div>
+
+
+            <div class="summary-total">
+
+                <span>
+                    ჯამი
+                </span>
+
+                <span id="checkoutTotal">
+                    0.00 €
+                </span>
+
+            </div>
+
+        </aside>
+
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 წვრილმანი
+
+</footer>
+
+
+<script src="js/cart.js"></script>
+
+<script src="js/checkout.js"></script>
+
+
+</body>
+
+</html>
+შედგენა
+მისწერეთ მიშიკო დიაკონიძე
 
