@@ -333,3 +333,95 @@ footer {
         gap: 15px;
     }
 }
+/* AGE VERIFICATION */
+
+#ageVerification {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.age-box {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.age-box h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.age-box p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.age-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.age-buttons button {
+    padding: 12px 18px;
+
+    border: 0;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+#ageYes {
+    background: var(--primary);
+    color: white;
+}
+
+#ageNo {
+    background: var(--border);
+    color: var(--text);
+}
+
+.age-denied {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+.age-denied h1 {
+    margin-bottom: 15px;
+}
