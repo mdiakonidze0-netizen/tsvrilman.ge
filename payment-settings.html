@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Payment Settings — წვრილმანი</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+<header class="header">
+
+    <a
+        href="admin.html"
+        class="logo"
+    >
+        ← Manager
+    </a>
+
+    <h2>
+        💳 გადახდის პარამეტრები
+    </h2>
+
+</header>
+
+
+<main class="section">
+
+    <h1>
+        ონლაინ გადახდები
+    </h1>
+
+    <p>
+        აქედან შეძლებ ონლაინ გადახდის მეთოდების
+        ჩართვას და გამორთვას.
+    </p>
+
+    <br>
+
+
+    <!-- VISA / MASTERCARD -->
+
+    <section class="admin-card">
+
+        <h2>
+            💳 Visa / Mastercard
+        </h2>
+
+        <p>
+            საბანკო ბარათით ონლაინ გადახდა
+        </p>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="cardEnabled"
+            >
+
+            ჩართულია
+
+        </label>
+
+        <br><br>
+
+        <label>
+            Payment Provider
+        </label>
+
+        <input
+            type="text"
+            id="cardProvider"
+            placeholder="მაგ. Stripe"
+        >
+
+        <br>
+
+        <button
+            class="primary-button"
+            id="saveCardSettings"
+        >
+            შენახვა
+        </button>
+
+    </section>
+
+
+    <br>
+
+
+    <!-- PAYPAL -->
+
+    <section class="admin-card">
+
+        <h2>
+            🅿️ PayPal
+        </h2>
+
+        <p>
+            ონლაინ გადახდა PayPal-ის საშუალებით
+        </p>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="paypalEnabled"
+            >
+
+            ჩართულია
+
+        </label>
+
+        <br><br>
+
+        <button
+            class="primary-button"
+            id="savePaypalSettings"
+        >
+            შენახვა
+        </button>
+
+    </section>
+
+
+    <br>
+
+
+    <!-- FUTURE METHODS -->
+
+    <section class="admin-card">
+
+        <h2>
+            ➕ სხვა ონლაინ მეთოდი
+        </h2>
+
+        <p>
+            მომავალში აქედან შეძლებ დამატებითი
+            ონლაინ გადახდის მეთოდების ჩართვას.
+        </p>
+
+        <input
+            type="text"
+            id="newPaymentMethod"
+            placeholder="მეთოდის სახელი"
+        >
+
+        <br><br>
+
+        <button
+            class="primary-button"
+            id="addPaymentMethod"
+        >
+            დამატება
+        </button>
+
+        <div id="customPaymentMethods"></div>
+
+    </section>
+
+
+    <br>
+
+
+    <!-- CURRENCY -->
+
+    <section class="admin-card">
+
+        <h2>
+            💶 ვალუტა
+        </h2>
+
+        <select id="currency">
+
+            <option value="EUR">
+                EUR — €
+            </option>
+
+            <option value="GBP">
+                GBP — £
+            </option>
+
+            <option value="USD">
+                USD — $
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <button
+            class="primary-button"
+            id="saveCurrency"
+        >
+            ვალუტის შენახვა
+        </button>
+
+    </section>
+
+
+    <br>
+
+    <p id="paymentMessage"></p>
+
+</main>
+
+
+<script src="js/payment.js"></script>
+<script src="js/payment-settings.js"></script>
+
+</body>
+
+</html>
 
