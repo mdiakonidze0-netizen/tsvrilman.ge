@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="ka">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products — წვრილმანი</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+<header class="header">
+
+    <a
+        href="admin.html"
+        class="logo"
+    >
+        ← Manager
+    </a>
+
+    <h2>
+        📦 პროდუქტების მართვა
+    </h2>
+
+</header>
+
+
+<main class="section">
+
+    <h1>
+        პროდუქტები
+    </h1>
+
+    <!-- PRODUCT FORM -->
+
+    <section class="admin-card">
+
+        <h2 id="productFormTitle">
+            ➕ ახალი პროდუქტი
+        </h2>
+
+        <input
+            type="hidden"
+            id="productId"
+        >
+
+        <label>
+            პროდუქტის სახელი
+        </label>
+
+        <input
+            type="text"
+            id="productName"
+            placeholder="მაგ. ხელნაკეთი ნივთი"
+        >
+
+
+        <label>
+            ფასი
+        </label>
+
+        <input
+            type="number"
+            id="productPrice"
+            min="0"
+            step="0.01"
+            placeholder="0.00"
+        >
+
+
+        <label>
+            კატეგორია
+        </label>
+
+        <input
+            type="text"
+            id="productCategory"
+            placeholder="კატეგორია"
+        >
+
+
+        <label>
+            მარაგი
+        </label>
+
+        <input
+            type="number"
+            id="productStock"
+            min="0"
+            step="1"
+            placeholder="0"
+        >
+
+
+        <label>
+            პროდუქტის ფოტო
+        </label>
+
+        <input
+            type="text"
+            id="productImage"
+            placeholder="ფოტოს URL"
+        >
+
+
+        <label>
+            აღწერა
+        </label>
+
+        <textarea
+            id="productDescription"
+            rows="5"
+            placeholder="პროდუქტის აღწერა..."
+        ></textarea>
+
+
+        <br>
+
+        <button
+            class="primary-button"
+            id="saveProduct"
+        >
+            პროდუქტის შენახვა
+        </button>
+
+        <button
+            type="button"
+            id="cancelEdit"
+        >
+            გაუქმება
+        </button>
+
+    </section>
+
+
+    <br>
+
+
+    <!-- SEARCH -->
+
+    <section class="admin-card">
+
+        <h2>
+            🔎 პროდუქტების ძებნა
+        </h2>
+
+        <input
+            type="text"
+            id="productSearch"
+            placeholder="მოძებნე პროდუქტი..."
+        >
+
+    </section>
+
+
+    <br>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="admin-card">
+
+        <h2>
+            📦 არსებული პროდუქტები
+        </h2>
+
+        <div id="productsList"></div>
+
+    </section>
+
+
+    <p id="productMessage"></p>
+
+</main>
+
+
+<script src="js/product-manager.js"></script>
+<script src="js/product-manager-page.js"></script>
+
+</body>
+
+</html>
