@@ -1,1 +1,237 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manager Panel — წვრილმანი</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+        წვრილ<span>მანი</span>
+    </a>
+
+    <span>
+        👨‍💼 Manager Panel
+    </span>
+
+</header>
+
+
+<main class="section">
+
+    <h1>
+        მართვის პანელი
+    </h1>
+
+    <p>
+        აქედან შეძლებ შენი მაღაზიის მართვას.
+    </p>
+
+    <br>
+
+
+    <!-- STATISTICS -->
+
+    <section>
+
+        <h2>
+            📊 სტატისტიკა
+        </h2>
+
+        <div class="admin-grid">
+
+            <div class="admin-card">
+
+                <strong id="totalSales">
+                    0 €
+                </strong>
+
+                <span>
+                    ჯამური გაყიდვები
+                </span>
+
+            </div>
+
+
+            <div class="admin-card">
+
+                <strong id="totalOrders">
+                    0
+                </strong>
+
+                <span>
+                    შეკვეთები
+                </span>
+
+            </div>
+
+
+            <div class="admin-card">
+
+                <strong id="totalProducts">
+                    0
+                </strong>
+
+                <span>
+                    პროდუქტები
+                </span>
+
+            </div>
+
+
+            <div class="admin-card">
+
+                <strong id="topProduct">
+                    —
+                </strong>
+
+                <span>
+                    ყველაზე გაყიდვადი
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <br><br>
+
+
+    <!-- PRODUCT MANAGEMENT -->
+
+    <section class="admin-card">
+
+        <h2>
+            📦 პროდუქტების მართვა
+        </h2>
+
+        <br>
+
+        <button
+            class="primary-button"
+            id="addProductButton"
+        >
+            ➕ პროდუქტის დამატება
+        </button>
+
+        <div id="productManager">
+
+            <p>
+                პროდუქტები ჯერ არ არის დამატებული.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <br><br>
+
+
+    <!-- ORDERS -->
+
+    <section class="admin-card">
+
+        <h2>
+            🧾 შეკვეთები
+        </h2>
+
+        <div id="ordersList">
+
+            <p>
+                შეკვეთები ჯერ არ არის.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <br><br>
+
+
+    <!-- PAYMENT SETTINGS -->
+
+    <section class="admin-card">
+
+        <h2>
+            💳 გადახდის პარამეტრები
+        </h2>
+
+        <p>
+            აქ მოგვიანებით შეძლებ რეალური გადახდის
+            პროვაიდერის დაკავშირებას.
+        </p>
+
+        <button
+            class="primary-button"
+            id="paymentSettingsButton"
+        >
+            გადახდის პარამეტრები
+        </button>
+
+    </section>
+
+
+    <br><br>
+
+
+    <!-- DELIVERY -->
+
+    <section class="admin-card">
+
+        <h2>
+            🚚 მიწოდება
+        </h2>
+
+        <p>
+            ევროპის ქვეყნებისთვის მიწოდების
+            პარამეტრების მართვა.
+        </p>
+
+        <button
+            class="primary-button"
+            id="deliverySettingsButton"
+        >
+            მიწოდების პარამეტრები
+        </button>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 წვრილმანი — Manager Panel
+
+</footer>
+
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>
 
